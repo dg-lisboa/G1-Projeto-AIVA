@@ -3,7 +3,8 @@
 
 ![Version](https://img.shields.io/badge/Version-Development-yellow?style=flat-square)
 ![Java](https://img.shields.io/badge/Language-Java-orange?style=flat-square)
-![MySQL](https://img.shields.io/badge/MySQL-5.7-blue?style=flat-square)
+![MySQL](https://img.shields.io/badge/MySQL-Database-blue?style=flat-square)
+
 
 
 ## Descrição
