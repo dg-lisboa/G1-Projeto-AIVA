@@ -2,10 +2,10 @@
 
 ![logoAIVA](https://github.com/user-attachments/assets/d1c45be8-a916-4c73-a9c8-83efcb78aee0)
 
-![Badge em Desenvolvimento](http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=GREEN&style=for-the-badge)
-![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)
-![Java](https://img.shields.io/badge/Language-Java-orange)
-![License](https://img.shields.io/badge/License-MIT-green)
+![Version](https://img.shields.io/badge/Version-1.0.0-blue?style=flat-square)
+![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square)
+![Java](https://img.shields.io/badge/Language-Java-orange?style=flat-square)
+
 
 ## Descrição
 
