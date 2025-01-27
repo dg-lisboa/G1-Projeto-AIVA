@@ -2,7 +2,6 @@
 ![logoAIVA](https://github.com/user-attachments/assets/b98cff02-38a5-4029-b76f-7473b3490913)
 
 ![Version](https://img.shields.io/badge/Version-Development-yellow?style=flat-square)
-![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen?style=flat-square)
 ![Java](https://img.shields.io/badge/Language-Java-orange?style=flat-square)
 
 
