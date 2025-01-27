@@ -92,6 +92,6 @@ public class MenuVendasRapidas {
         } else {
             System.out.println("Forma de Pagamento: Parcelado em " + parcelas + "x");
         }
-        System.out.println("Comprovante compartilhado com sucesso!");
+        System.out.println("Venda cadastrada com sucesso!");
     }
 }

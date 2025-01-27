@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DatabaseConnection {
 
     public static Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/aigit va"; // Substitua "aiva" pelo nome do seu banco de dados
+        String url = "jdbc:mysql://localhost:3306/aiva"; // Substitua "aiva" pelo nome do seu banco de dados
         String username = "root"; // Substitua pelo seu usuário do MySQL
         String password = "@Aiva012025"; // Substitua pela sua senha do MySQL
 

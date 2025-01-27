@@ -4,8 +4,8 @@ import controller.GestorDeVendas;
 import java.util.Scanner;
 
 public class MenuVendas {
-    private GestorDeVendas gestorDeVendas;
-    private Scanner scanner;
+    private final GestorDeVendas gestorDeVendas;
+    private final Scanner scanner;
 
     public MenuVendas(GestorDeVendas gestorDeVendas) {
         this.gestorDeVendas = gestorDeVendas;
@@ -15,10 +15,10 @@ public class MenuVendas {
     public void exibirMenu() {
         while (true) {
             // Exibe os saldos acima do menu, sempre atualizados
-            System.out.println("Saldo de Vendas: R$ " + gestorDeVendas.getTotalVendas());
-            System.out.println("Menu de Vendas:");
-            System.out.println("1. Registrar Venda");
-            System.out.println("2. Voltar para o Menu Principal");
+            System.out.println("-------------------- Menu Vendas ---------------------");
+            System.out.println("/// Total de vendas: R$ " + gestorDeVendas.getTotalVendas());
+            System.out.println("1. Registrar Venda   2. Histórico de vendas   3. Sair");
+            System.out.println("------------------------------------------------------");
             System.out.print("Opção: ");
             int opcao = scanner.nextInt();
             scanner.nextLine(); // Limpa o buffer
@@ -26,9 +26,10 @@ public class MenuVendas {
             if (opcao == 1) {
                 registrarVenda();
             } else if (opcao == 2) {
-                break; // Volta para o Menu Principal
+                historicoVenda(); // Volta para o Menu Principal
             } else {
                 System.out.println("Opção inválida! Tente novamente.");
+                break;
             }
         }
     }
@@ -39,5 +40,9 @@ public class MenuVendas {
         scanner.nextLine(); // Limpa o buffer
         gestorDeVendas.adicionarVenda(valorVenda); // Atualiza o saldo de vendas
         System.out.println("Venda registrada com sucesso!");
+    }
+
+    private void historicoVenda() {
+        System.out.print("Digite o valor da venda: ");
     }
 }

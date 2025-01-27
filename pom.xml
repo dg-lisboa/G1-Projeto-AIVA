@@ -4,23 +4,52 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.seuprojeto</groupId>  <!-- Troque pelo seu pacote base -->
-    <artifactId>seu-projeto</artifactId> <!-- Nome do seu projeto -->
+    <groupId>com.aiva</groupId>  <!-- Nome do pacote base: aiva -->
+    <artifactId>Aiva-Teste05</artifactId> <!-- Nome do projeto: Aiva-Teste05 -->
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <properties>
-        <maven.compiler.source>11</maven.compiler.source>  <!-- Defina a versão do Java que está usando -->
+        <maven.compiler.source>11</maven.compiler.source>  <!-- Versão usada do java: 11 -->
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <dependencies>
         <!-- Dependência do MySQL Connector -->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.23</version> <!-- Use a versão mais recente se necessário -->
+            <version>8.0.33</version>
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.3.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>aiva.Main</mainClass> <!-- Nome completo classe principal: aiva -->
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

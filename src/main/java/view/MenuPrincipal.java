@@ -9,10 +9,10 @@ import java.util.Scanner;
  * Menu principal do sistema.
  */
 public class MenuPrincipal {
-    private GestorDeClientes gestorDeClientes;
-    private GestorDeVendas gestorDeVendas;
-    private GestorDeDespesas gestorDeDespesas;
-    private Scanner scanner;
+    private final GestorDeClientes gestorDeClientes;
+    private final GestorDeVendas gestorDeVendas;
+    private final GestorDeDespesas gestorDeDespesas;
+    private final Scanner scanner;
     private boolean loginBemSucedido;
 
     public MenuPrincipal() {
@@ -27,24 +27,21 @@ public class MenuPrincipal {
         while (true) {
             if (!loginBemSucedido) {
                 // Exibe menu de login se o login não foi realizado
-                System.out.println("Bem-vindo ao sistema Aiva! Faça o login para continuar.");
                 MenuCliente menuCliente = new MenuCliente(gestorDeClientes);
                 loginBemSucedido = menuCliente.exibirMenu(); // Realiza login
                 continue; // Retorna para o topo do loop até que o login seja bem-sucedido
             }
 
             // Menu principal, exibido após login bem-sucedido
-            System.out.println("Bem-vindo ao sistema Aiva! Escolha uma opção:");
+            System.out.println("\n///////////  Bem-vindo ao sistema Aiva!");
 
             // Exibe o saldo de vendas, despesas e o saldo total
-            System.out.println("Saldo de Vendas: R$ " + gestorDeVendas.getTotalVendas());
-            System.out.println("Saldo de Despesas: R$ " + gestorDeDespesas.getTotalDespesas());
-            System.out.println("Saldo Total: R$ " + (gestorDeVendas.getTotalVendas() - gestorDeDespesas.getTotalDespesas()));
-
-            System.out.println("1. Menu de Vendas");
-            System.out.println("2. Menu de Despesas");
-            System.out.println("3. Vendas Rápidas");  // Nova opção
-            System.out.println("4. Sair");
+            System.out.println("------------------- Saldo Atual ----------------------");
+            System.out.println("Total de Vendas  -  Despesas  =   Lucro Bruto  ");
+            System.out.println("      "+ gestorDeVendas.getTotalVendas() + "        -     "+ gestorDeDespesas.getTotalDespesas() + "    =       " + (gestorDeVendas.getTotalVendas() - gestorDeDespesas.getTotalDespesas()));
+            System.out.println("------------------ Menu Principal --------------------");
+            System.out.println(" 1. Vendas   2. Despesas   3. Venda Rápida   4. Sair");
+            System.out.println("------------------------------------------------------");
             System.out.print("Opção: ");
 
             int opcao = scanner.nextInt();

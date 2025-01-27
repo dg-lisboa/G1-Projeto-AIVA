@@ -1,0 +1,13 @@
+controller\GestorDeVendas.class
+model\Venda.class
+com\aiva\Main.class
+view\MenuPrincipal.class
+controller\GestorDeDespesas.class
+model\Despesa.class
+view\MenuDespesas.class
+database\DatabaseConnection.class
+model\Cliente.class
+view\MenuVendas.class
+controller\GestorDeClientes.class
+view\MenuCliente.class
+view\MenuVendasRapidas.class
