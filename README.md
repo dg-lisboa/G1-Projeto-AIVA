@@ -15,7 +15,7 @@
 - **Java** (para a construção da aplicação)
 - **Java Swing** (para a interface gráfica)
 - **SQL** (para a gestão do banco de dados)
-- **Biometria** (autenticação por Face ID ou Impressão Digital)
+
 
 ---
 
