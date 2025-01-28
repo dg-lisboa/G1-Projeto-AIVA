@@ -3,12 +3,11 @@ package view;
 import controller.GestorDeVendas;
 import model.Venda;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class MenuVendasRapidas {
-    private GestorDeVendas gestorDeVendas;
-    private Scanner scanner;
+    private final GestorDeVendas gestorDeVendas;
+    private final Scanner scanner;
 
     public MenuVendasRapidas(GestorDeVendas gestorDeVendas) {
         this.gestorDeVendas = gestorDeVendas;
@@ -16,19 +15,65 @@ public class MenuVendasRapidas {
     }
 
     public void exibirMenu() {
-        System.out.println("Vendas Rápidas");
+        while (true) {
+            // Exibe os saldos acima do menu, sempre atualizados
+            System.out.println("+------------------- Menu Vendas Rápidas --------------------+");
+            System.out.println("|  1. Registrar Venda   2. Sair                              |");
+            System.out.println("+------------------------------------------------------------+");
+            System.out.print("Opção: ");
+            int opcao = scanner.nextInt();
+            scanner.nextLine(); // Limpa o buffer
 
-        // Coletar dados da venda
-        System.out.print("Digite o nome do produto (ex: Avon, Natura): ");
-        String produto = scanner.nextLine();
+            if (opcao == 1) {
+                registrarVenda();
+            } else if (opcao == 2) {
+                System.out.println("Saindo do sistema...");
+                break;
+            } else {
+                System.out.println("Opção inválida! Tente novamente.");
+            }
+        }
+    }
 
-        System.out.print("Digite o valor da venda: ");
-        double valor = scanner.nextDouble();
-        scanner.nextLine(); // Limpa o buffer
+    private void registrarVenda() {
+        double valor;
+        while (true) {
+            System.out.print("Digite o valor da venda: ");
+            String valorStr = scanner.nextLine();
+            try {
+                valor = Double.parseDouble(valorStr);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Valor inválido! Por favor, digite um número.");
+            }
+        }
+
+        LocalDate dataVenda = LocalDate.now(); // Assume a data atual do programa
+
+        String cliente;
+        while (true) {
+            System.out.print("Digite o nome do cliente: ");
+            cliente = scanner.nextLine();
+            if (cliente.matches("[a-zA-Z\\s]+")) {
+                break;
+            } else {
+                System.out.println("Nome inválido! Por favor, digite um nome válido.");
+            }
+        }
+
+        String fornecedor;
+        while (true) {
+            System.out.print("Digite o nome do fornecedor: ");
+            fornecedor = scanner.nextLine();
+            if (fornecedor.matches("[a-zA-Z\\s]+")) {
+                break;
+            } else {
+                System.out.println("Nome inválido! Por favor, digite um nome válido.");
+            }
+        }
 
         System.out.println("Escolha a forma de pagamento: ");
-        System.out.println("1. À Vista");
-        System.out.println("2. Parcelado");
+        System.out.println("1. À Vista  2. Parcelado");
         System.out.print("Opção: ");
         int pagamento = scanner.nextInt();
         scanner.nextLine(); // Limpa o buffer
@@ -41,57 +86,9 @@ public class MenuVendasRapidas {
             scanner.nextLine(); // Limpa o buffer
         }
 
-        // Registrar a venda
-        registrarVenda(produto, valor, pagamento, parcelas);
-
-        // Compartilhar comprovante
-        compartilharComprovante(produto, valor, pagamento, parcelas);
-    }
-
-    private void registrarVenda(String produto, double valor, int pagamento, int parcelas) {
-        // Data de vencimento começa com a data atual
-        LocalDate dataVencimento = LocalDate.now();
-
-        // Se for parcelado, calculamos a data de vencimento para cada parcela
-        if (pagamento == 2 && parcelas > 0) {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-
-            // Exibe as parcelas com as datas de vencimento
-            for (int i = 1; i <= parcelas; i++) {
-                // Adiciona "i" meses à data de vencimento
-                LocalDate dataParcela = dataVencimento.plusMonths(i);
-
-                // Exibe a data de vencimento de cada parcela
-                System.out.println("Parcela " + i + ": " + dataParcela.format(formatter));
-            }
-        } else {
-            // Se for à vista, apenas exibe a data atual
-            System.out.println("Venda à vista! Data de vencimento: " + dataVencimento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
-        }
-
-        // Adiciona a venda ao sistema
-        gestorDeVendas.adicionarVenda(valor);
-        System.out.println("\nVenda registrada com sucesso!");
-        System.out.println("Produto: " + produto);
-        System.out.println("Valor: R$ " + valor);
-        if (pagamento == 1) {
-            System.out.println("Forma de Pagamento: À Vista");
-        } else {
-            System.out.println("Forma de Pagamento: Parcelado em " + parcelas + "x");
-        }
-    }
-
-    private void compartilharComprovante(String produto, double valor, int pagamento, int parcelas) {
-        // Simulação do compartilhamento de um comprovante
-        System.out.println("\nCompartilhando o comprovante...");
-        System.out.println("Comprovante de Venda:");
-        System.out.println("Produto: " + produto);
-        System.out.println("Valor: R$ " + valor);
-        if (pagamento == 1) {
-            System.out.println("Forma de Pagamento: À Vista");
-        } else {
-            System.out.println("Forma de Pagamento: Parcelado em " + parcelas + "x");
-        }
-        System.out.println("Venda cadastrada com sucesso!");
+        // Criar e registrar a venda
+        Venda venda = new Venda(null, valor, cliente, parcelas, dataVenda, fornecedor); // Produto é null
+        gestorDeVendas.adicionarVenda(venda); // Atualiza o saldo de vendas
+        System.out.println("Venda registrada com sucesso!");
     }
 }

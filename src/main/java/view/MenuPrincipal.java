@@ -40,7 +40,7 @@ public class MenuPrincipal {
             System.out.println("Total de Vendas  -  Despesas  =   Lucro Bruto  ");
             System.out.println("      "+ gestorDeVendas.getTotalVendas() + "        -     "+ gestorDeDespesas.getTotalDespesas() + "    =       " + (gestorDeVendas.getTotalVendas() - gestorDeDespesas.getTotalDespesas()));
             System.out.println("------------------ Menu Principal --------------------");
-            System.out.println(" 1. Vendas   2. Despesas   3. Venda Rápida   4. Sair");
+            System.out.println(" 1. Vendas   2. Despesas   3. Vendas Rápidas   4. Sair");
             System.out.println("------------------------------------------------------");
             System.out.print("Opção: ");
 

@@ -1,34 +1,33 @@
 package model;
 
-/**
- * Representa uma despesa no sistema.
- */
-public class Despesa {
-    private double valor;
-    private String categoria;
-    private String descricao;
-    private String data;
+import java.time.LocalDate;
 
-    public Despesa(double valor, String categoria, String descricao, String data) {
+public class Despesa {
+    private String nome;
+    private double valor;
+    private LocalDate dataPagamento;
+    private String referencia;
+
+    public Despesa(String nome, double valor, LocalDate dataPagamento, String referencia) {
+        this.nome = nome;
         this.valor = valor;
-        this.categoria = categoria;
-        this.descricao = descricao;
-        this.data = data;
+        this.dataPagamento = dataPagamento;
+        this.referencia = referencia;
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     public double getValor() {
         return valor;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public LocalDate getDataPagamento() {
+        return dataPagamento;
     }
 
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public String getData() {
-        return data;
+    public String getReferencia() {
+        return referencia;
     }
 }
