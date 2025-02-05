@@ -1,0 +1,63 @@
+/* login-style.css */
+
+/* Fonte para o aplicativo */
+* {
+    -fx-font-family: "Segoe UI", Arial, sans-serif; /* Fonte moderna e limpa */
+}
+
+/* Estilo para os botões */
+.button {
+    -fx-background-color: #800080; /* Roxo */
+    -fx-text-fill: white; /* Texto branco */
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 25px;
+}
+
+.button:hover {
+    -fx-background-color: #6a006a; /* Roxo mais escuro ao passar o mouse */
+}
+
+/* Estilo para os campos de texto (Venda e Despesas) */
+.text-field, .password-field {
+    -fx-background-radius: 20px;
+    -fx-padding: 10px;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 20px;
+}
+
+/* Estilo para os links */
+.hyperlink {
+    -fx-text-fill: #7c4dff;
+    -fx-font-weight: bold;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #5a2ea6;
+}
+
+/* Estilo para o texto de Vendas (verde) */
+.vendas {
+    -fx-fill: green; /* Verde */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para o texto de Despesas (vermelho) */
+.despesas {
+    -fx-fill: red; /* Vermelho */
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para o texto do Saldo (preto) */
+.saldo {
+    -fx-fill: black; /* Preto */
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para a imagem */
+.image-view {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0.5, 2, 2);
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.seuprojeto.demo.CadastroController">
+    <!-- Campo de E-mail -->
+    <TextField fx:id="emailField" promptText="Digite seu e-mail" style="-fx-pref-width: 300; -fx-background-radius: 20px; -fx-padding: 10px; -fx-border-radius: 20px; -fx-border-color: #ccc;"/>
+
+    <!-- Campo de Senha -->
+    <PasswordField fx:id="senhaField" promptText="Digite sua senha" style="-fx-pref-width: 300; -fx-background-radius: 20px; -fx-padding: 10px; -fx-border-radius: 20px; -fx-border-color: #ccc;"/>
+
+    <!-- Campo de Confirmar Senha -->
+    <PasswordField fx:id="confirmarSenhaField" promptText="Confirme sua senha" style="-fx-pref-width: 300; -fx-background-radius: 20px; -fx-padding: 10px; -fx-border-radius: 20px; -fx-border-color: #ccc;"/>
+
+    <!-- Botão de Cadastro -->
+    <Button text="Cadastrar" onAction="#handleCadastro" style="-fx-background-color: #7c4dff; -fx-text-fill: white; -fx-pref-width: 300; -fx-background-radius: 20px; -fx-padding: 10px; -fx-border-radius: 20px;"/>
+
+    <!-- Link para voltar ao login -->
+    <HBox spacing="10" alignment="CENTER">
+        <Hyperlink text="Já sou cliente, quero fazer login" onAction="#handleBackToLogin" style="-fx-text-fill: #7c4dff;"/>
+    </HBox>
+</VBox>

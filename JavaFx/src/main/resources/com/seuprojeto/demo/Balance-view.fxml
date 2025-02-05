@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml" fx:controller="com.seuprojeto.demo.BalanceController" stylesheets="@login-style.css">
+    <!-- Exibição do Saldo -->
+    <Text fx:id="saldoText" styleClass="saldo"/>
+
+    <!-- Exibição de Vendas e Despesas -->
+    <HBox spacing="10" alignment="CENTER">
+        <Text fx:id="vendasText" styleClass="vendas"/>
+    </HBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Text fx:id="despesasText" styleClass="despesas"/>
+    </HBox>
+
+    <!-- Campos de Inserção de Valores -->
+    <TextField fx:id="vendasField" promptText="Valor da Venda" style="-fx-pref-width: 200; -fx-background-radius: 20px;"/>
+    <TextField fx:id="despesasField" promptText="Valor das Despesas" style="-fx-pref-width: 200; -fx-background-radius: 20px;"/>
+
+    <!-- Botões -->
+    <Button text="Venda Rápida" onAction="#handleVendaRapida" styleClass="button"/>
+    <Button text="Despesas" onAction="#handleDespesas" styleClass="button"/>
+
+    <!-- Imagem no Canto Superior Direito -->
+    <ImageView fx:id="aivaImage" fitHeight="50" fitWidth="50" preserveRatio="true" styleClass="image-view"/>
+</VBox>
