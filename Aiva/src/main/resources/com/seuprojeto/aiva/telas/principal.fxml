@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox spacing="20" alignment="CENTER" maxWidth="400" maxHeight="800"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.seuprojeto.aiva.telas.TelaPrincipal"
+      stylesheets="@styles.css">
+
+    <!-- Barra Superior com Botão Atualizar -->
+    <HBox spacing="10" alignment="TOP_RIGHT">
+        <Button text="🔄 Atualizar" onAction="#atualizarValores" styleClass="btn-update"/>
+    </HBox>
+
+    <!-- Nome do Aplicativo -->
+    <Label text="Bem-vindo ao Aiva!" styleClass="app-title"/>
+
+    <!-- Resumo Financeiro -->
+    <Label text="Total de Vendas:" styleClass="info-title"/>
+    <Label fx:id="totalVendasLabel" text="R$ 0.00" styleClass="info-value"/>
+
+    <Label text="Total de Despesas:" styleClass="info-title"/>
+    <Label fx:id="totalDespesasLabel" text="R$ 0.00" styleClass="info-value"/>
+
+    <Label text="Saldo Restante:" styleClass="info-title"/>
+    <Label fx:id="saldoLabel" text="R$ 0.00" styleClass="info-value"/>
+
+    <!-- Botões de navegação -->
+    <Button text="Ir para Vendas" onAction="#abrirTelaVendas" styleClass="btn-secondary"/>
+    <Button text="Ir para Despesas" onAction="#goToDespesas" styleClass="btn-secondary"/>
+    <Button text="Ver Relatórios" onAction="#abrirRelatorios" styleClass="btn-secondary"/>
+
+    <!-- Botão de Sair -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Sair" onAction="#logout" styleClass="btn-exit"/>
+    </HBox>
+
+</VBox>

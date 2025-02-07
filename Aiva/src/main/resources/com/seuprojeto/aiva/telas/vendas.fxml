@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="800" maxWidth="400" spacing="20" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seuprojeto.aiva.telas.TelaVendas">
+
+    <!-- Nome do Aplicativo -->
+    <Label styleClass="app-title" text="Vendas" />
+
+    <!-- Campos de Entrada -->
+    <TextField fx:id="clienteField" promptText="Cliente" styleClass="input-field" />
+    <TextField fx:id="valorField" promptText="Valor" styleClass="input-field" />
+    <TextField fx:id="produtoField" promptText="Produto" styleClass="input-field" />
+
+    <!-- HBox para colocar ComboBox e DatePicker lado a lado -->
+    <HBox spacing="10">
+        <ComboBox fx:id="parcelasComboBox" prefHeight="59.0" prefWidth="90.0" styleClass="input-field" />
+        <DatePicker fx:id="dataVendaPicker" prefHeight="59.0" prefWidth="32.0" styleClass="input-field" />
+    </HBox>
+
+    <!-- HBox para colocar os botões lado a lado -->
+    <HBox spacing="10">
+        <Button onAction="#handleVenda" styleClass="btn-primary" text="Registrar Venda" />
+        <Button fx:id="btnDesfazer" onAction="#desfazerUltimaVenda" styleClass="btn-secondary" text="Desfazer Última Venda" />
+    </HBox>
+
+    <!-- Histórico de Vendas -->
+    <Label styleClass="section-title" text="Histórico de Vendas" />
+    <TableView fx:id="tabelaVendas" prefHeight="241.0" prefWidth="360.0" styleClass="styled-table">
+        <columns>
+            <TableColumn fx:id="colCliente" text="Cliente" />
+            <TableColumn fx:id="colValor" text="Valor" />
+            <TableColumn fx:id="colProduto" text="Produto" />
+            <TableColumn fx:id="colParcelas" text="Parcelas" />
+            <TableColumn fx:id="colData" text="Data" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
+    </TableView>
+
+    <!-- Botão Voltar -->
+    <Button onAction="#voltarTelaPrincipal" styleClass="btn-primary" text="Voltar" />
+
+</VBox>

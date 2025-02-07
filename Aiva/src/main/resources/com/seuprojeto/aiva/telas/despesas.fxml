@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" maxHeight="800" maxWidth="400" spacing="20" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seuprojeto.aiva.telas.TelaDespesas">
+
+    <!-- Nome do Aplicativo -->
+    <Label styleClass="app-title" text="Registrar Despesa" />
+
+    <!-- Campos de Entrada -->
+    <TextField fx:id="descricaoField" promptText="Descrição" styleClass="input-field" />
+    <TextField fx:id="valorField" promptText="Valor" styleClass="input-field" />
+    <TextField fx:id="categoriaField" promptText="Categoria" styleClass="input-field" />
+    <DatePicker fx:id="dataDespesaPicker" styleClass="input-field" />
+
+    <!-- Botão Registrar -->
+    <Button onAction="#handleDespesa" styleClass="btn-primary" text="Registrar Despesa" />
+
+    <!-- Histórico de Despesas -->
+    <Label styleClass="section-title" text="Histórico de Despesas" />
+    <TableView fx:id="tabelaDespesas" styleClass="styled-table">
+        <columns>
+            <TableColumn fx:id="colDescricao" text="Descrição" />
+            <TableColumn fx:id="colValor" text="Valor" />
+            <TableColumn fx:id="colCategoria" text="Categoria" />
+            <TableColumn fx:id="colData" text="Data" />
+        </columns>
+    </TableView>
+
+    <!-- Botão Voltar -->
+    <Button onAction="#voltarTelaPrincipal" styleClass="btn-primary" text="Voltar" />
+
+</VBox>

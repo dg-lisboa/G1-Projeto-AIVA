@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" alignment="CENTER" maxWidth="400" maxHeight="800"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.seuprojeto.aiva.telas.TelaRelatorio"
+      stylesheets="@styles.css">
+
+    <!-- Nome do Aplicativo -->
+    <Label text="Relatórios de Vendas e Despesas" styleClass="app-title"/>
+
+    <!-- Tabela de Relatórios -->
+    <TableView fx:id="tabelaRelatorio" styleClass="styled-table">
+        <columns>
+            <TableColumn text="Cliente/Descrição" fx:id="colDescricao"/>
+            <TableColumn text="Valor" fx:id="colValor"/>
+            <TableColumn text="Produto/Categoria" fx:id="colCategoria"/>
+            <TableColumn text="Tipo" fx:id="colTipo"/>
+            <TableColumn text="Data" fx:id="colData"/>
+        </columns>
+    </TableView>
+
+    <!-- Botão Voltar -->
+    <Button text="Voltar" onAction="#voltarTelaPrincipal" styleClass="btn-primary"/>
+
+</VBox>

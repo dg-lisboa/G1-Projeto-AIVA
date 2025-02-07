@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox spacing="20" alignment="CENTER" prefWidth="400" prefHeight="800"
+      xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.seuprojeto.aiva.telas.TelaCadastro"
+      stylesheets="@styles.css">
+
+    <!-- Nome do Aplicativo -->
+    <Label text="Criar Conta" styleClass="app-title"/>
+
+    <!-- Campos de Entrada -->
+    <TextField fx:id="nomeField" promptText="Digite seu nome" styleClass="input-field"/>
+    <TextField fx:id="emailField" promptText="Digite seu e-mail" styleClass="input-field"/>
+    <PasswordField fx:id="senhaField" promptText="Digite sua senha" styleClass="input-field"/>
+
+    <!-- Botão Cadastrar -->
+    <Button text="Cadastrar" onAction="#handleCadastro" styleClass="btn-primary"/>
+
+    <!-- Voltar para Login -->
+    <HBox spacing="15" alignment="CENTER">
+        <Hyperlink text="Já tenho uma conta" onAction="#voltarParaLogin" styleClass="link-label"/>
+    </HBox>
+
+</VBox>

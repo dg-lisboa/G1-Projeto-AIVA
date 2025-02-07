@@ -1,0 +1,118 @@
+/* =================== CONFIGURAÇÃO GERAL =================== */
+.root {
+    -fx-background-color: #F5F5F5;
+    -fx-padding: 20px;
+    -fx-pref-width: 400px;
+    -fx-pref-height: 800px;
+}
+
+/* =================== TÍTULO PRINCIPAL =================== */
+.app-title {
+    -fx-font-size: 32px;
+    -fx-text-fill: #7C4DFF;
+    -fx-font-weight: bold;
+    -fx-padding: 20px 0 10px 0;
+    -fx-text-alignment: center;
+}
+
+/* =================== CAMPOS DE ENTRADA =================== */
+.input-field {
+    -fx-pref-width: 320px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 16px;
+    -fx-border-color: #7C4DFF;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px;
+}
+.input-field:focused {
+    -fx-border-color: #6A0DAD;
+}
+
+/* =================== BOTÕES PRINCIPAIS =================== */
+.btn-primary {
+    -fx-pref-width: 320px;
+    -fx-pref-height: 50px;
+    -fx-font-size: 18px;
+    -fx-background-color: #7C4DFF;
+    -fx-text-fill: white;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+.btn-primary:hover {
+    -fx-background-color: #6A0DAD;
+}
+
+/* =================== BOTÕES SECUNDÁRIOS =================== */
+.btn-secondary {
+    -fx-pref-width: 280px;
+    -fx-pref-height: 45px;
+    -fx-font-size: 16px;
+    -fx-background-color: #A682D9;
+    -fx-text-fill: white;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+.btn-secondary:hover {
+    -fx-background-color: #9575CD;
+}
+
+/* =================== BOTÃO DE SAÍDA =================== */
+.btn-exit {
+    -fx-pref-width: 250px;
+    -fx-pref-height: 45px;
+    -fx-font-size: 16px;
+    -fx-background-color: #FF5C5C;
+    -fx-text-fill: white;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+}
+.btn-exit:hover {
+    -fx-background-color: #E53935;
+}
+
+/* =================== BOTÃO DE ATUALIZAÇÃO (NO CANTO) =================== */
+.btn-update {
+    -fx-background-color: transparent;
+    -fx-text-fill: #6A0DAD;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 15px;
+    -fx-alignment: TOP_RIGHT;
+}
+.btn-update:hover {
+    -fx-text-fill: #5E0CA8;
+}
+
+/* =================== LINKS (CRIAR CONTA, ESQUECI A SENHA) =================== */
+.link-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #7C4DFF;
+    -fx-underline: true;
+    -fx-cursor: hand;
+}
+.link-label:hover {
+    -fx-text-fill: #5E0CA8;
+}
+
+/* =================== TABELA =================== */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #D3D3D3;
+    -fx-border-radius: 12px;
+    -fx-background-radius: 12px;
+}
+.table-column {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #6A0DAD;
+    -fx-alignment: center;
+}
+
+/* =================== SCROLLPANE =================== */
+.scroll-pane {
+    -fx-background-color: transparent;
+}
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}

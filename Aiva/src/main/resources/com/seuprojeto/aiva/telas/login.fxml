@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox spacing="20" alignment="CENTER" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml" fx:controller="com.seuprojeto.aiva.telas.TelaLogin"
+      stylesheets="@styles.css">
+
+    <!-- Nome do Aplicativo -->
+    <Label text="Aiva" styleClass="app-title"/>
+
+    <!-- Campos de Entrada -->
+    <TextField fx:id="emailField" promptText="Digite seu e-mail" styleClass="input-field"/>
+    <PasswordField fx:id="senhaField" promptText="Digite sua senha" styleClass="input-field"/>
+
+    <!-- Botão Entrar -->
+    <Button text="Entrar" onAction="#handleLogin" styleClass="btn-primary"/>
+
+    <!-- Links para Criar Conta -->
+    <HBox spacing="15" alignment="CENTER">
+        <Hyperlink text="Criar Conta" onAction="#abrirTelaCadastro" styleClass="link-label"/>
+    </HBox>
+
+</VBox>
